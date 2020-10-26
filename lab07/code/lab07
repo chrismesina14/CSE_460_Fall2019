@@ -1,0 +1,14 @@
+Script started on 2019-11-12 12:20:42-08:00
+]0;005319687@csusb.edu@jb359-2:~/cse460/labs/lab07/code[005319687@csusb.edu@jb359-2 code]$ g++ -o lab7 lab7.cpp
+]0;005319687@csusb.edu@jb359-2:~/cse460/labs/lab07/code[005319687@csusb.edu@jb359-2 code]$ ./lab7
+Enter a number to find its factorial: 5
+
+The factorial of 5 is 120
+]0;005319687@csusb.edu@jb359-2:~/cse460/labs/lab07/code[005319687@csusb.edu@jb359-2 code]$ ./lab7
+Enter a number to find its factorial: 3
+
+The factorial of 3 is 6
+]0;005319687@csusb.edu@jb359-2:~/cse460/labs/lab07/code[005319687@csusb.edu@jb359-2 code]$ exit
+exit
+
+Script done on 2019-11-12 12:21:06-08:00

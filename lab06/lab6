@@ -1,0 +1,55 @@
+Script started on 2019-11-05 13:21:24-08:00
+]0;005319687@csusb.edu@jb359-2:~/cse460/labs/lab06[005319687@csusb.edu@jb359-2 lab06]$ ls
+badcnt.c  goodcnt.c  lab6  [0m[01;32mpc[0m  pc.c  [01;32mxbadcnt[0m  [01;32mxgoodcnt[0m
+]0;005319687@csusb.edu@jb359-2:~/cse460/labs/lab06[005319687@csusb.edu@jb359-2 lab06]$ ./xbadcnt
+
+ BOOM! cnt is [1058874], should be 2000000
+]0;005319687@csusb.edu@jb359-2:~/cse460/labs/lab06[005319687@csusb.edu@jb359-2 lab06]$ ./xgoodcnt
+
+ OK! cnt is [2000000]
+]0;005319687@csusb.edu@jb359-2:~/cse460/labs/lab06[005319687@csusb.edu@jb359-2 lab06]$ ./pc 2 2
+Producer [140071524521728] produced 383
+Producer [140071524521728] produced 777
+	Consumer [140071507736320] consumed 383
+	Consumer [140071507736320] consumed 777
+Producer [140071524521728] produced 915
+Producer [140071516129024] produced 886
+Producer [140071524521728] produced 793
+	Consumer [140071507736320] consumed 915
+	Consumer [140071499343616] consumed 886
+Producer [140071524521728] produced 386
+Producer [140071524521728] produced 492
+Producer [140071524521728] produced 649
+	Consumer [140071507736320] consumed 793
+	Consumer [140071507736320] consumed 386
+Producer [140071524521728] produced 421
+Producer [140071524521728] produced 362
+	Consumer [140071499343616] consumed 492
+	Consumer [140071499343616] consumed 649
+	Consumer [140071499343616] consumed 421
+	Consumer [140071507736320] consumed 362
+Producer [140071524521728] produced 27
+Producer [140071516129024] produced 335
+	Consumer [140071499343616] consumed 27
+Producer [140071516129024] produced 690
+	Consumer [140071507736320] consumed 335
+	Consumer [140071499343616] consumed 690
+Producer [140071516129024] produced 59
+Producer [140071516129024] produced 763
+	Consumer [140071507736320] consumed 59
+	Consumer [140071499343616] consumed 763
+Producer [140071516129024] produced 926
+Producer [140071516129024] produced 540
+	Consumer [140071507736320] consumed 926
+	Consumer [140071499343616] consumed 540
+Producer [140071516129024] produced 426
+Producer [140071516129024] produced 172
+	Consumer [140071507736320] consumed 426
+	Consumer [140071499343616] consumed 172
+Producer [140071516129024] produced 736
+	Consumer [140071499343616] consumed 736
+Exit the program
+]0;005319687@csusb.edu@jb359-2:~/cse460/labs/lab06[005319687@csusb.edu@jb359-2 lab06]$ exit
+exit
+
+Script done on 2019-11-05 13:21:49-08:00

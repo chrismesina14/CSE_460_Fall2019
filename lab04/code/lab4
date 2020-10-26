@@ -1,0 +1,29 @@
+Script started on 2019-10-15 11:47:54-07:00
+]0;005319687@csusb.edu@jb359-1:~/cse460/labs/lab04/code[005319687@csusb.edu@jb359-1 code]$ ls -l
+total 29
+-rw-r--r-- 1 005319687@csusb.edu domain users@csusb.edu     0 Oct 15 11:47 lab4
+-rw-r--r-- 1 005319687@csusb.edu domain users@csusb.edu  1344 Oct 15 11:42 lab4.cpp
+-rwxr-xr-x 1 005319687@csusb.edu domain users@csusb.edu 19248 Oct 15 11:42 [0m[01;32mmyIO[0m
+]0;005319687@csusb.edu@jb359-1:~/cse460/labs/lab04/code[005319687@csusb.edu@jb359-1 code]$ myIO
+Error. Not enough arguments.
+]0;005319687@csusb.edu@jb359-1:~/cse460/labs/lab04/code[005319687@csusb.edu@jb359-1 code]$ myIO file.txt
+this is a test
+This is the Parent process
+this is a test
+]0;005319687@csusb.edu@jb359-1:~/cse460/labs/lab04/code[005319687@csusb.edu@jb359-1 code]$ ls -l
+total 30
+-rw------- 1 005319687@csusb.edu domain users@csusb.edu    15 Oct 15 11:48 file.txt
+-rw-r--r-- 1 005319687@csusb.edu domain users@csusb.edu     0 Oct 15 11:47 lab4
+-rw-r--r-- 1 005319687@csusb.edu domain users@csusb.edu  1344 Oct 15 11:42 lab4.cpp
+-rwxr-xr-x 1 005319687@csusb.edu domain users@csusb.edu 19248 Oct 15 11:42 [0m[01;32mmyIO[0m
+]0;005319687@csusb.edu@jb359-1:~/cse460/labs/lab04/code[005319687@csusb.edu@jb359-1 code]$ cat file.txt
+this is a test
+]0;005319687@csusb.edu@jb359-1:~/cse460/labs/lab04/code[005319687@csusb.edu@jb359-1 code]$ myIO /file.txt
+this is a test
+myIO: Bad file descriptor
+This is the Parent process
+myIO: Bad address
+]0;005319687@csusb.edu@jb359-1:~/cse460/labs/lab04/code[005319687@csusb.edu@jb359-1 code]$ exit
+exit
+
+Script done on 2019-10-15 11:48:56-07:00

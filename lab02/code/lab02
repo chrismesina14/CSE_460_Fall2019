@@ -1,0 +1,36 @@
+Script started on 2019-10-06 17:21:00-07:00
+]0;005319687@csusb.edu@jb359-1:~/cse460/labs/lab02/code[005319687@csusb.edu@jb359-1 code]$ rm -r backup
+]0;005319687@csusb.edu@jb359-1:~/cse460/labs/lab02/code[005319687@csusb.edu@jb359-1 code]$ ls -l
+total 11
+-rwxr-xr-x 1 005319687@csusb.edu domain users@csusb.edu 518 Oct  6 17:19 [0m[01;32mbackup.sh[0m
+-rw-r--r-- 1 005319687@csusb.edu domain users@csusb.edu   0 Oct  6 17:21 lab02
+-rw-r--r-- 1 005319687@csusb.edu domain users@csusb.edu   0 Oct  6 17:20 test1.cpp
+-rw-r--r-- 1 005319687@csusb.edu domain users@csusb.edu   0 Oct  6 17:20 test2.cpp
+]0;005319687@csusb.edu@jb359-1:~/cse460/labs/lab02/code[005319687@csusb.edu@jb359-1 code]$ chmod +x backup.sh
+]0;005319687@csusb.edu@jb359-1:~/cse460/labs/lab02/code[005319687@csusb.edu@jb359-1 code]$ ./backup.sh
+Please enter a backup directory name: 
+backup
+A directory named backup has been created
+test1.cpp has been backed up
+test2.cpp has been backed up
+]0;005319687@csusb.edu@jb359-1:~/cse460/labs/lab02/code[005319687@csusb.edu@jb359-1 code]$ ls -l backup
+total 1
+-rw-r--r-- 1 005319687@csusb.edu domain users@csusb.edu 0 Oct  6 17:21 test1.cpp.backup
+-rw-r--r-- 1 005319687@csusb.edu domain users@csusb.edu 0 Oct  6 17:21 test2.cpp.backup
+]0;005319687@csusb.edu@jb359-1:~/cse460/labs/lab02/code[005319687@csusb.edu@jb359-1 code]$ echo "something">>test1.cpp
+]0;005319687@csusb.edu@jb359-1:~/cse460/labs/lab02/code[005319687@csusb.edu@jb359-1 code]$ ./backup.sh
+Please enter a backup directory name: 
+backup
+test1.cpp has been updated
+test2.cpp has no update
+]0;005319687@csusb.edu@jb359-1:~/cse460/labs/lab02/code[005319687@csusb.edu@jb359-1 code]$ touch test3.cpp
+]0;005319687@csusb.edu@jb359-1:~/cse460/labs/lab02/code[005319687@csusb.edu@jb359-1 code]$ ./backup.sh
+Please enter a backup directory name: 
+backup
+test1.cpp has no update
+test2.cpp has no update
+test3.cpp has been updated
+]0;005319687@csusb.edu@jb359-1:~/cse460/labs/lab02/code[005319687@csusb.edu@jb359-1 code]$ exit
+exit
+
+Script done on 2019-10-06 17:25:58-07:00

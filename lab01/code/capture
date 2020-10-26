@@ -1,0 +1,104 @@
+Script started on 2019-09-30 20:55:27-07:00
+]0;005319687@csusb.edu@jb359-1:~/cse460/labs/lab01/code[005319687@csusb.edu@jb359-1 code]$ make clean
+rm -f *.o demo 
+]0;005319687@csusb.edu@jb359-1:~/cse460/labs/lab01/code[005319687@csusb.edu@jb359-1 code]$ make
+g++ -c -ggdb main.cpp
+g++ -c -ggdb functions.cpp
+g++ main.o functions.o -o demo
+]0;005319687@csusb.edu@jb359-1:~/cse460/labs/lab01/code[005319687@csusb.edu@jb359-1 code]$ gdb demo
+GNU gdb (GDB) Fedora 8.2-7.fc29
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-redhat-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from demo...done.
+(gdb) b find_max
+Breakpoint 1 at 0x4013a3: file functions.cpp, line 48.
+(gdb) r
+Starting program: /home/csusb.edu/005319687/cse460/labs/lab01/code/demo 
+Missing separate debuginfos, use: dnf debuginfo-install glibc-2.28-33.fc29.x86_64
+How big is the array? 50
+
+Breakpoint 1, find_max (array=0x7fffffffc9b0, length=50, max=0) at functions.cpp:48
+48	    max = array [0];
+Missing separate debuginfos, use: dnf debuginfo-install libgcc-8.3.1-2.fc29.x86_64 libstdc++-8.3.1-2.fc29.x86_64
+(gdb) p array[0]@50
+$1 = {4, 85, 100, 40, 67, 51, 5, 22, 16, 58, 71, 85, 80, 6, 36, 76, 91, 77, 97, 24, 68, 73, 
+  65, 98, 75, 68, 88, 29, 81, 65, 71, 84, 2, 70, 23, 68, 72, 27, 41, 87, 84, 12, 72, 15, 
+  69, 59, 90, 11, 87, 38}
+(gdb) p max
+$2 = 0
+(gdb) n
+49	    for (i = 1; i < length; i ++)
+(gdb) n
+51	        if (max < array [i])
+(gdb) n
+53	            max = array [i];
+(gdb) p max
+$3 = 4
+(gdb) n
+49	    for (i = 1; i < length; i ++)
+(gdb) until
+57	    return max;
+(gdb) p max
+$4 = 100
+(gdb) n
+58	}
+(gdb) n
+main () at main.cpp:20
+20	    if (find_max (array, size, max) == 0 )
+(gdb) n
+
+Breakpoint 1, find_max (array=0x7fffffffc9b0, length=50, max=100) at functions.cpp:48
+48	    max = array [0];
+(gdb) n
+49	    for (i = 1; i < length; i ++)
+(gdb) until
+51	        if (max < array [i])
+(gdb) n
+53	            max = array [i];
+(gdb) n
+49	    for (i = 1; i < length; i ++)
+(gdb) n
+51	        if (max < array [i])
+(gdb) n
+53	            max = array [i];
+(gdb) n
+49	    for (i = 1; i < length; i ++)
+(gdb) n[Kuntil
+57	    return max;
+(gdb) n
+58	}
+(gdb) n
+main () at main.cpp:20
+20	    if (find_max (array, size, max) == 0 )
+(gdb) n
+25	    cout << "max value in array is: " << max;
+(gdb) n
+26		cout << endl;
+(gdb) n
+max value in array is: 100
+28	    return 0;
+(gdb) n
+29	}
+(gdb) n
+0x00007ffff7ab8413 in __libc_start_main () from /lib64/libc.so.6
+(gdb) n
+Single stepping until exit from function __libc_start_main,
+which has no line number information.
+[Inferior 1 (process 22163) exited normally]
+(gdb) q
+]0;005319687@csusb.edu@jb359-1:~/cse460/labs/lab01/code[005319687@csusb.edu@jb359-1 code]$ exit
+exit
+
+Script done on 2019-09-30 20:58:03-07:00

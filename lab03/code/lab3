@@ -1,0 +1,73 @@
+Script started on 2019-10-08 12:14:59-07:00
+]0;005319687@csusb.edu@jb359-1:~/cse460/labs/lab03/code[005319687@csusb.edu@jb359-1 code]$ g++ -o myCat lab3assgn.cpp
+]0;005319687@csusb.edu@jb359-1:~/cse460/labs/lab03/code[005319687@csusb.edu@jb359-1 code]$ ./myCat fork.cpp pc.cpp
+In the PARENT process
+Original Process ID: 17665, Parent Is: 17574, Process Group is: 17665
+
+In the CHILD process Trying to Meow
+Child Process ID: 17666, Parent ID: 17665, Process Group: 17665
+
+     1	#include <stdio.h>
+     2	#include <sys/types.h>
+     3	#include <unistd.h>
+     4	
+     5	int main(void)
+     6	{
+     7	   printf("Hello \n");
+     8	   fork();
+     9	   printf("bye\n");
+    10	   return 0;
+    11	}
+two files linked together
+    12	two files linked together
+    13	#include <stdio.h>
+    14	#include <sys/types.h>
+    15	#include <unistd.h>
+    16	#include <errno.h>
+    17	#include <string.h>
+    18	
+    19	#define BUFLEN 10
+    20	
+    21	int main(void)
+    22	{
+    23	   int i;
+    24	   char  buffer[BUFLEN+1];
+    25	   pid_t fork_return;
+    26	
+    27	   fork_return  = fork( ); 
+    28	
+    29	   if (fork_return == 0)
+    30	   {
+    31	      strncpy(buffer, "CHILD\n", BUFLEN); /*in the child process*/
+    32	      buffer[BUFLEN] = '\0';
+    33	   }
+    34	   else if(fork_return > 0)
+    35	   {
+    36	      strncpy(buffer, "PARENT\n", BUFLEN); /*in the parent process*/
+    37	      buffer[BUFLEN] = '\0';
+    38	   }
+    39	   else if(fork_return == -1)
+    40	   {
+    41	      printf("ERROR:\n");
+    42	      switch (errno)
+    43	      {
+    44	         case EAGAIN:
+    45		    printf("Cannot fork process: System Process Limit Reached\n");
+    46		 case ENOMEM:
+    47		    printf("Cannot fork process: Out of memory\n");
+    48	      }
+    49	      return 1;
+    50	   }
+    51	
+    52	   for (i=0; i<5; ++i) /*both processes do this*/
+    53	   {
+    54	      sleep(1); /*5 times each*/
+    55	      write(1, buffer, strlen(buffer));
+    56	   }
+    57	
+    58	   return 0;
+    59	}
+]0;005319687@csusb.edu@jb359-1:~/cse460/labs/lab03/code[005319687@csusb.edu@jb359-1 code]$ exit
+exit
+
+Script done on 2019-10-08 12:16:30-07:00
